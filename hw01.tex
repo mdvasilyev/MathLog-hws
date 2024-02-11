@@ -1,2 +1,111 @@
+\section{Многозначные логики}
+\begin{enumerate}
+  \item (3 балла) В какой из многозначных логик, рассмотренных выше, истинны все пропозициональные тавтологии? Обоснуйте ваш ответ.
+  \begin{solution}
+    все изи
+    \begin{displaymath}
+      \begin{array}{c c|c}
+      p & q & p \land q\\
+      \hline
+      T & T & T\\
+      T & F & F\\
+      F & T & F\\
+      F & F & F\\
+      \end{array}
+      \end{displaymath}
+  \end{solution}
+  \item Определите связку $\leftrightarrow$ для следующих логик:
+  \begin{enumerate}
+    \item (1 балл) сильная логика Клини, таблица истинности
+    \begin{solution}
+      По определению $A \leftrightarrow B = (A \rightarrow B) \land (B \rightarrow A)$.
+      \begin{displaymath}
+      \begin{array}{c c|c|c|c}
+        A & B & A \rightarrow B & B \rightarrow A & A \leftrightarrow B\\
+        \hline
+        T & T & T & T & T\\
+        T & I & I & T & I\\
+        T & F & F & T & F\\
+        I & T & T & I & I\\
+        I & I & I & I & I\\
+        I & F & I & T & I\\
+        F & T & T & F & F\\
+        F & I & T & I & I\\
+        F & F & T & T & T
+      \end{array}
+      \end{displaymath}
+    \end{solution}
+    \item (1 балл) слабая логика Клини, таблица истинности
+    \begin{solution}
+      \begin{displaymath}
+      \begin{array}{c c|c|c|c}
+        A & B & A \rightarrow B & B \rightarrow A & A \leftrightarrow B\\
+        \hline
+        T & T & T & T & T\\
+        T & I & I & I & I\\
+        T & F & F & T & F\\
+        I & T & I & I & I\\
+        I & I & I & I & I\\
+        I & F & I & I & I\\
+        F & T & T & F & F\\
+        F & I & I & I & I\\
+        F & F & T & T & T
+      \end{array}
+      \end{displaymath}
+    \end{solution}
+    \item (1 балл) логика Приста, таблица истинности
+    \begin{solution}
+      \begin{displaymath}
+      \begin{array}{c c|c|c|c}
+        A & B & A \rightarrow B & B \rightarrow A & A \leftrightarrow B\\
+        \hline
+        T & T & T & T & T\\
+        T & I & I & T & I\\
+        T & F & F & T & F\\
+        I & T & T & I & I\\
+        I & I & I & I & I\\
+        I & F & I & T & I\\
+        F & T & T & F & F\\
+        F & I & T & I & I\\
+        F & F & T & T & T
+      \end{array}
+      \end{displaymath}
+    \end{solution}
+    \item (1 балл) логика Гёделя, кусочно-заданная функция
+    \begin{solution}
+      Возможные значения:
+      \begin{equation}
+        A_i = 0, \frac{1}{k-1}, \frac{2}{k-1}, \dots, \frac{k-2}{k-1}, 1.
+      \end{equation}
+      При проходе по множеству в сторону увеличения $A_i$ будем получать случай $A_i\leq A_{i+1}$, поэтому функция $A\rightarrow B$ будет во всех точках равна 1.
+      \begin{equation}
+        A\rightarrow B = 1.
+      \end{equation}
+      В случае $B\rightarrow A$ случаи в импликации будут другими, будет выбираться значения $B$, поэтому функция будет следующей:
+      \begin{equation}
+        B\rightarrow A =
+        \begin{cases}
+          0, & [0, \frac{1}{k-1}] \\
+          \frac{1}{k-1}, & (\frac{1}{k-1}, \frac{2}{k-1}] \\
+          \dots \\
+          \frac{k-2}{k-1}, & (\frac{k-3}{k-1}, \frac{k-2}{k-1}] \\
+          1, & (\frac{k-2}{k-1}, 1]
+        \end{cases}
+      \end{equation}
+      Так как конъюнкция определяется как минимум, то итоговая функция будет аналогичной:
+      \begin{equation}
+        B\leftrightarrow A =
+        \begin{cases}
+          0, & [0, \frac{1}{k-1}] \\
+          \frac{1}{k-1}, & (\frac{1}{k-1}, \frac{2}{k-1}] \\
+          \dots \\
+          \frac{k-2}{k-1}, & (\frac{k-3}{k-1}, \frac{k-2}{k-1}] \\
+          1, & (\frac{k-2}{k-1}, 1]
+        \end{cases}
+      \end{equation}
+    \end{solution}
+  \end{enumerate}
+  \item (3 балла) Рассмотрим функцию голосования $maj(x1, ..., xn)$. Она обращается в единицу, когда среди поданных на вход значений, единиц не меньше, чем нулей. В остальных случаях она обращается в ноль. Выпишите полином Жегалкина методом неопределённых коэффициентов для функции $maj(x1, x2, x3)$.
+\end{enumerate}
 
 \clearpage
