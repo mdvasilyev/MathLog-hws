@@ -1,0 +1,73 @@
+\section{Многозначные логики}
+\begin{enumerate}
+  \item Переведите формулу $x_1 \lor x_2 \rightarrow x_1 \land x_2$ в заданных системах связок:
+  \begin{itemize}
+    \item (1 балла) $\uparrow$
+    \begin{solution}
+      На паре показывали, что
+      \begin{equation}
+        x_1 \lor x_2 \leftrightarrow (x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2), \quad x_1 \land x_2 \leftrightarrow (x_1 \uparrow x_2) \uparrow (x_1 \uparrow x_2)
+      \end{equation}
+      Тогда выражение становится равным
+      \begin{equation}
+        ((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2)) \rightarrow ((x_1 \uparrow x_2) \uparrow (x_1 \uparrow x_2))
+      \end{equation}
+      Выразим импликацию:
+      \begin{equation}
+        A \rightarrow B = \overline{A} \lor B
+      \end{equation}
+      Тогда:
+      \begin{eqnarray}
+        \overline{((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2))} \lor ((x_1 \uparrow x_2) \uparrow (x_1 \uparrow x_2)) = \\
+        (\overline{((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2))} \uparrow \overline{((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2))}) \uparrow \\ (((x_1 \uparrow x_2) \uparrow (x_1 \uparrow x_2)) \uparrow ((x_1 \uparrow x_2) \uparrow (x_1 \uparrow x_2))) = \\
+        \{[((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2)) \uparrow ((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2))] \uparrow \\ \left[((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2)) \uparrow ((x_1 \uparrow x_1) \uparrow (x_2 \uparrow x_2))\right]\} \uparrow \\ \left[((x_1 \uparrow x_2) \uparrow (x_1 \uparrow x_2)) \uparrow ((x_1 \uparrow x_2) \uparrow (x_1 \uparrow x_2))\right]
+      \end{eqnarray}
+    \end{solution}
+    \item (2 балла) $\downarrow$
+    \begin{solution}
+      На паре показывали, что
+      \begin{equation}
+        x_1 \land x_2 \leftrightarrow (x_1 \downarrow x_1) \downarrow (x_2 \downarrow x_2), \quad x_1 \lor x_2 \leftrightarrow (x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2)
+      \end{equation}
+      Тогда выражение становится равным
+      \begin{eqnarray}
+        ((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2)) \rightarrow ((x_1 \downarrow x_1) \downarrow (x_2 \downarrow x_2)) = \\
+        \overline{((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2))} \lor ((x_1 \downarrow x_1) \downarrow (x_2 \downarrow x_2)) = \\
+        \{\overline{((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2))} \downarrow ((x_1 \downarrow x_1) \downarrow (x_2 \downarrow x_2))\} \downarrow \\ \{\overline{((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2))} \downarrow ((x_1 \downarrow x_1) \downarrow (x_2 \downarrow x_2))\} = \\
+        \{[((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2)) \downarrow ((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2))] \downarrow ((x_1 \downarrow x_1) \downarrow (x_2 \downarrow x_2))\} \downarrow \\
+        \{[((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2)) \downarrow ((x_1 \downarrow x_2) \downarrow (x_1 \downarrow x_2))] \downarrow ((x_1 \downarrow x_1) \downarrow (x_2 \downarrow x_2))\}
+      \end{eqnarray}
+    \end{solution}
+    \item (1 балла) $0, \rightarrow$
+    \begin{solution}
+      Выразим отрицание, конъюнкцию и дизъюнкцию
+      \begin{eqnarray}
+        \overline{x_1} \leftrightarrow x_1 \rightarrow 0, \quad x_1 \lor x_2 \leftrightarrow \overline{x_1} \rightarrow x_2 \leftrightarrow (x_1 \rightarrow 0) \rightarrow x_2, \\ x_1 \land x_2 \leftrightarrow \overline{\overline{x_1} \lor \overline{x_2}} \leftrightarrow (x_1 \rightarrow \overline{x_2}) \rightarrow 0 \leftrightarrow (x_1 \rightarrow x_2 \rightarrow 0) \rightarrow 0
+      \end{eqnarray}
+      Тогда выражение становится равным
+      \begin{eqnarray}
+        ((x_1 \rightarrow 0) \rightarrow x_2) \rightarrow (x_1 \rightarrow x_2 \rightarrow 0) \rightarrow 0
+      \end{eqnarray}
+    \end{solution}
+    \item (1 балла) $\oplus, \land, 1$
+    \begin{solution}
+      Выразим отрицание, дизъюнкцию и импликацию
+      \begin{eqnarray}
+        \overline{x_1} \leftrightarrow 1 \oplus x_1, \quad x_1 \lor x_2 \leftrightarrow x_1 \oplus x_2 \oplus x_1 \land x_2, \\
+        x_1 \rightarrow x_2 \leftrightarrow \overline{x_1} \lor x_2 \leftrightarrow 1 \oplus x_1 \oplus x_2 \oplus (1 \oplus x_1) \land x_2 \leftrightarrow 1 \oplus x_1 \oplus x_2 \oplus x_2 \oplus x_1 \land x_2 \leftrightarrow \\
+        1 \oplus x_1 \oplus x_1 \land x_2
+      \end{eqnarray}
+      Тогда выражение становится равным
+      \begin{eqnarray}
+        (x_1 \oplus x_2 \oplus x_1 \land x_2) \rightarrow x_1 \land x_2 = 1 \oplus (x_1 \oplus x_2 \oplus x_1 \land x_2) \oplus (x_1 \oplus x_2 \oplus x_1 \land x_2) \land (x_1 \land x_2) = \\
+        1 \oplus x_1 \oplus x_2 \oplus x_1 \land x_2 \oplus x_1 \land x_1 \land x_2 \oplus x_2 \land x_1 \land x_2 \oplus x_1 \land x_2 \land x_1 \land x_2 = \\
+        1 \oplus x_1 \oplus x_2 \oplus x_1 \land x_2 \oplus x_1 \land x_2 \oplus x_2 \land x_1 = \\
+        1 \oplus x_1 \oplus x_2 \oplus x_1 \land x_2
+      \end{eqnarray}
+    \end{solution}
+  \end{itemize}
+  \item (1 балла) Воспользуйтесь картой Карно с практики и постройте минимальную КНФ для рассмотренной формулы. Для полного решения необходимо указать, какие прямоугольники были объединены.
+  
+\end{enumerate}
+
+\clearpage
