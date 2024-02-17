@@ -67,6 +67,35 @@
     \end{solution}
   \end{itemize}
   \item (1 балла) Воспользуйтесь картой Карно с практики и постройте минимальную КНФ для рассмотренной формулы. Для полного решения необходимо указать, какие прямоугольники были объединены.
+  \begin{solution}
+    Напишем таблицу истинности
+    \begin{displaymath}
+      \begin{array}{c c|c|c|c}
+        x_1 & x_2 & x_1 \lor x_2 & x_1 \land x_2 & x_1 \lor x_2 \rightarrow x_1 \land x_2\\
+        \hline
+        0 & 0 & 0 & 0 & 1\\
+        0 & 1 & 1 & 0 & 0\\
+        1 & 0 & 1 & 0 & 0\\
+        1 & 1 & 1 & 1 & 1\\
+      \end{array}
+    \end{displaymath}
+    Построим карту Карно
+    \begin{table}[h!]
+      \centering
+      \begin{tabular}{cc|cc|}
+      \cline{3-4}
+      \multicolumn{2}{c|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{$x_2$} \\ \cline{3-4} 
+      \multicolumn{2}{c|}{} & \multicolumn{1}{c|}{0} & 1 \\ \hline
+      \multicolumn{1}{|c|}{\multirow{2}{*}{$x_1$}} & 1 & \multicolumn{1}{c|}{0} & 1 \\ \cline{2-4} 
+      \multicolumn{1}{|c|}{} & 0 & \multicolumn{1}{c|}{1} & 0 \\ \hline
+      \end{tabular}
+    \end{table}
+
+    Для КНФ нужно склеивать по нулям, и в данном случае получается взять два прямоугольника единичного размера -- с координатами $(0,0), (1,1)$, они соответствуют формуле
+    \begin{equation}
+      (x_1 \lor \overline{x_2}) \land (\overline{x_1} \lor x_2)
+    \end{equation}
+  \end{solution}
   
 \end{enumerate}
 
