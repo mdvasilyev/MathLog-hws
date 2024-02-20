@@ -70,30 +70,45 @@
   \begin{solution}
     Напишем таблицу истинности
     \begin{displaymath}
-      \begin{array}{c c|c|c|c}
-        x_1 & x_2 & x_1 \lor x_2 & x_1 \land x_2 & x_1 \lor x_2 \rightarrow x_1 \land x_2\\
+      \begin{array}{c c|c c|c}
+        x_1 & x_2 & y_1 & y_2 & f(x_1, x_2, y_1, y_2)\\
         \hline
         0 & 0 & 0 & 0 & 1\\
+        0 & 0 & 0 & 1 & 0\\
+        0 & 0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 1 & 0\\
+        0 & 1 & 0 & 0 & 1\\
+        0 & 1 & 0 & 1 & 1\\
         0 & 1 & 1 & 0 & 0\\
-        1 & 0 & 1 & 0 & 0\\
+        0 & 1 & 1 & 1 & 0\\
+        1 & 0 & 0 & 0 & 1\\
+        1 & 0 & 0 & 1 & 0\\
+        1 & 0 & 1 & 0 & 1\\
+        1 & 0 & 1 & 1 & 0\\
+        1 & 1 & 0 & 0 & 1\\
+        1 & 1 & 0 & 1 & 1\\
+        1 & 1 & 1 & 0 & 1\\
         1 & 1 & 1 & 1 & 1\\
       \end{array}
     \end{displaymath}
+    \newpage
     Построим карту Карно
-    \begin{table}[h!]
-      \centering
-      \begin{tabular}{cc|cc|}
-      \cline{3-4}
-      \multicolumn{2}{c|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{$x_2$} \\ \cline{3-4} 
-      \multicolumn{2}{c|}{} & \multicolumn{1}{c|}{0} & 1 \\ \hline
-      \multicolumn{1}{|c|}{\multirow{2}{*}{$x_1$}} & 1 & \multicolumn{1}{c|}{0} & 1 \\ \cline{2-4} 
-      \multicolumn{1}{|c|}{} & 0 & \multicolumn{1}{c|}{1} & 0 \\ \hline
+    
+    \begin{table}[ht!]
+      \begin{tabular}{cc|cccc|}
+      \cline{3-6}
+                                                  &    & \multicolumn{4}{c|}{$y_1y_2$}                                                        \\ \cline{3-6} 
+                                                  &    & \multicolumn{1}{c|}{00} & \multicolumn{1}{c|}{01} & \multicolumn{1}{c|}{11} & 10 \\ \hline
+      \multicolumn{1}{|c|}{\multirow{4}{*}{$x_1x_2$}} & 00 & \multicolumn{1}{c|}{1}  & \multicolumn{1}{c|}{0}  & \multicolumn{1}{c|}{0}  & 0  \\ \cline{2-6} 
+      \multicolumn{1}{|c|}{}                      & 01 & \multicolumn{1}{c|}{1}  & \multicolumn{1}{c|}{1}  & \multicolumn{1}{c|}{0}  & 0  \\ \cline{2-6} 
+      \multicolumn{1}{|c|}{}                      & 11 & \multicolumn{1}{c|}{1}  & \multicolumn{1}{c|}{1}  & \multicolumn{1}{c|}{1}  & 1  \\ \cline{2-6} 
+      \multicolumn{1}{|c|}{}                      & 10 & \multicolumn{1}{c|}{1}  & \multicolumn{1}{c|}{0}  & \multicolumn{1}{c|}{0}  & 1  \\ \hline
       \end{tabular}
     \end{table}
 
-    Для КНФ нужно склеивать по нулям, и в данном случае получается взять два прямоугольника единичного размера -- с координатами $(0,0), (1,1)$, они соответствуют формуле
+    Для КНФ нужно склеивать по нулям, и в данном случае получается взять два прямоугольника, каждый из которых с площадью 4 (первый -- сверху справа, второй -- посередине сверху и захватывает еще два нуля посередине снизу), они соответствуют формуле
     \begin{equation}
-      (x_1 \lor \overline{x_2}) \land (\overline{x_1} \lor x_2)
+      (x_1 \lor \overline{y_1}) \land (x_2 \lor \overline{y_2})
     \end{equation}
   \end{solution}
   
