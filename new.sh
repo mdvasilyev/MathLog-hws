@@ -5,7 +5,7 @@ if [ "$#" -ne 1 ] ; then
     exit 1
 fi
 
-git add template.tex "$1"
+git add template.tex "$1.tex"
 git commit -m "new: add $1"
 git push
 
