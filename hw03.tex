@@ -27,6 +27,23 @@
       \end{equation}
     \end{solution}
     \item[(b)] (1 балл) $A \land C \lor B \land C \rightarrow (A \lor B) \land C$
+    \begin{solution}
+      \hspace{0.01cm}
+      \begin{prooftree}
+        \AxiomC{$A \land C \vdash A \land C$}
+        \UnaryInfC{$A \land C \vdash A \land C \lor B \land C$}
+        \UnaryInfC{$A \land C \vdash (A \lor B) \land C$}
+        \AxiomC{$B \land C \vdash B \land C$}
+        \UnaryInfC{$B \land C \vdash A \land C \lor B \land C$}
+        \UnaryInfC{$B \land C \vdash (A \lor B) \land C$}
+        \BinaryInfC{$A \land C \lor B \land C \vdash (A \lor B) \land C$}
+        \UnaryInfC{$\vdash A \land C \lor B \land C \rightarrow (A \lor B) \land C$}
+      \end{prooftree}
+      Терм, соответствующий данному выводу:
+      \begin{equation}
+        \lambda x. \text{case } x \text{ of } \{\text{inl } x \rightarrow \text{pair (fst x) (snd x)}; \text{inr } x \rightarrow \text{pair (fst x) (snd x)}\}
+      \end{equation}
+    \end{solution}
     \item[(c)] (1 балл) $(A \lor C) \land (B \lor C) \rightarrow A \land B \lor C$
     \item[(d)] (2 балла) $((((A \rightarrow B) \rightarrow A) \rightarrow A) \rightarrow B) \rightarrow B$
   \end{itemize}
