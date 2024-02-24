@@ -61,8 +61,33 @@
       \end{eqnarray}
     \end{solution}
     \item[(d)] (2 балла) $((((A \rightarrow B) \rightarrow A) \rightarrow A) \rightarrow B) \rightarrow B$
+    \begin{solution}
+      \hspace{0.01cm}
+      \begin{prooftree}
+        \AxiomC{$A, \overline{B} \vdash A$}
+        \UnaryInfC{$A \land \overline{B}, \overline{B} \vdash A$}
+        \UnaryInfC{$\overline{\overline{A} \lor B}, \overline{B} \vdash A$}
+        \UnaryInfC{$\overline{A \rightarrow B}, \overline{B} \vdash A$}
+        \AxiomC{$A, \overline{B} \vdash A$}
+        \BinaryInfC{$\overline{(A \rightarrow B)} \lor A, \overline{B} \vdash A$}
+        \UnaryInfC{$(A \rightarrow B) \rightarrow A, \overline{B} \vdash A$}
+        \UnaryInfC{$(A \rightarrow B) \rightarrow A, \overline{B} \vdash \overline{\overline{A}}$}
+        \UnaryInfC{$(A \rightarrow B) \rightarrow A, \overline{A} \vdash B$}
+        \UnaryInfC{$((A \rightarrow B) \rightarrow A) \land \overline{A} \vdash B$}
+        \UnaryInfC{$\overline{\overline{((A \rightarrow B) \rightarrow A)} \lor A} \vdash B$}
+        \UnaryInfC{$\overline{((A \rightarrow B) \rightarrow A) \rightarrow A} \vdash B$}
+        \AxiomC{$B \vdash B$}
+        \BinaryInfC{$\overline{(((A \rightarrow B) \rightarrow A) \rightarrow A)} \lor B \vdash B$}
+        \UnaryInfC{$(((A \rightarrow B) \rightarrow A) \rightarrow A) \rightarrow B \vdash B$}
+        \UnaryInfC{$\vdash ((((A \rightarrow B) \rightarrow A) \rightarrow A) \rightarrow B) \rightarrow B$}
+      \end{prooftree}
+      Терм, соответствующий данному выводу:
+      \begin{equation}
+        \lambda f. f (\lambda g. g (\lambda x . f (\lambda y . x)))
+      \end{equation}
+    \end{solution}
   \end{itemize}
   \item (1 балл) Покажите, что закон де Моргана является теоремой исчисления высказываний:
-  $$\overline{A \lor B} \rightarrow A \land B$$
+  $$\overline{A \lor B} \rightarrow \overline{A} \land \overline{B}$$
 \end{enumerate}
 \clearpage
