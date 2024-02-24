@@ -89,5 +89,29 @@
   \end{itemize}
   \item (1 балл) Покажите, что закон де Моргана является теоремой исчисления высказываний:
   $$\overline{A \lor B} \rightarrow \overline{A} \land \overline{B}$$
+  \begin{solution}
+    Проще всего это показать, построив булеву функцию:
+    \begin{displaymath}
+      \begin{array}{c c|c c|c|c|c|c}
+        A & B & \overline{A} & \overline{B} & A \lor B & \overline{A \lor B} & \overline{A} \land \overline{B} & \overline{A \lor B} \rightarrow \overline{A} \land \overline{B}\\
+        \hline
+        0 & 0 & 1 & 1 & 0 & 1 & 1 & 1\\
+        0 & 1 & 1 & 0 & 1 & 0 & 0 & 1\\
+        1 & 0 & 0 & 1 & 1 & 0 & 0 & 1\\
+        1 & 1 & 0 & 0 & 1 & 0 & 0 & 1\\
+      \end{array}
+    \end{displaymath}
+    Или дерево вывода:
+    \begin{prooftree}
+      \AxiomC{$A \vdash A$}
+      \UnaryInfC{$A \vdash A \lor B$}
+      \UnaryInfC{$\overline{A \lor B} \vdash \overline{A}$}
+      \AxiomC{$B \vdash B$}
+      \UnaryInfC{$B \vdash A \lor B$}
+      \UnaryInfC{$\overline{A \lor B} \vdash \overline{B}$}
+      \BinaryInfC{$\overline{A \lor B} \vdash \overline{A} \land \overline{B}$}
+      \UnaryInfC{$\vdash \overline{A \lor B} \rightarrow \overline{A} \land \overline{B}$}
+    \end{prooftree}
+  \end{solution}
 \end{enumerate}
 \clearpage
