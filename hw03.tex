@@ -22,9 +22,10 @@
         \UnaryInfC{$\vdash A \land B \lor C \rightarrow (A \lor C) \land (B \lor C)$}
       \end{prooftree}
       Терм, соответствующий данному выводу:
-      \begin{equation}
-        \lambda x. \text{case } x \text{ of } \{\text{inl } x \rightarrow \text{pair (fst x) (snd x)}; \text{inr } x \rightarrow \text{pair x x}\}
-      \end{equation}
+      \begin{eqnarray}
+        \lambda x. (\text{case } x \text{ of } \{\text{inl } (x_1, x_2) \rightarrow \text{inl } x_1; \text{inr } x_3 \rightarrow \text{inr } x_3\}, \\
+        \text{case } x \text{ of } \{\text{inl } (x_1, x_2) \rightarrow \text{inl } x_2; \text{inr } x_3 \rightarrow \text{inr } x_3\})
+      \end{eqnarray}
     \end{solution}
     \item[(b)] (1 балл) $A \land C \lor B \land C \rightarrow (A \lor B) \land C$
     \begin{solution}
