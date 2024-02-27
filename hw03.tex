@@ -55,16 +55,21 @@
     \begin{solution}
       \hspace{0.01cm}
       \begin{prooftree}
-        \AxiomC{$(A \lor B \lor C), C \vdash C$}
-        \UnaryInfC{$(A \lor B \lor C) \land C \vdash C$}
-        \UnaryInfC{$A \land C \lor C \land B \lor C \land C \vdash C$}
-        \UnaryInfC{$A \land B \lor A \land C \lor C \land B \lor C \land C \vdash A \land B \lor C$}
+        \AxiomC{$A \land B \vdash A \land B$}
+        \UnaryInfC{$A \land B \vdash A \land B \lor C$}
+        \UnaryInfC{$A, B \vdash A \land B \lor C$}
+        \AxiomC{$C, B \vdash C$}
+        \UnaryInfC{$C, B \vdash A \land B \lor C$}
+        \BinaryInfC{$A \lor C, B \vdash A \land B \lor C$}
+        \AxiomC{$A \lor C, C \vdash C$}
+        \UnaryInfC{$A \lor C, C \vdash A \land B \lor C$}
+        \BinaryInfC{$A \lor C, B \lor C \vdash A \land B \lor C$}
         \UnaryInfC{$(A \lor C) \land (B \lor C) \vdash A \land B \lor C$}
         \UnaryInfC{$\vdash (A \lor C) \land (B \lor C) \rightarrow A \land B \lor C$}
       \end{prooftree}
       Терм, соответствующий данному выводу:
       \begin{eqnarray}
-        \lambda x. \text{case fst } x \text{ of } \{\text{inr (fst } x) \rightarrow \text{inr (fst x)}; \text{inl (fst } x) \rightarrow \text{case snd } x \text{ of } \\\{\text{inr (snd } x) \rightarrow \text{inr (snd } x);\text{inl (snd } x) \rightarrow \text{pair (fst } x) (\text{snd }x)\}\}
+        \lambda (x_1, x_2). \text{case } x_2 \text{ of } \{\text{inr } x_3 \rightarrow \text{inr } x_3; \text{inl } x_3 \rightarrow \text{case } x_1 \text{ of } \\\{\text{inr } x_4 \rightarrow \text{inr } x_4;\text{inl } x_4 \rightarrow \text{inl } (x_4, x_3)\}\}
       \end{eqnarray}
     \end{solution}
     \item[(d)] (2 балла) $((((A \rightarrow B) \rightarrow A) \rightarrow A) \rightarrow B) \rightarrow B$
