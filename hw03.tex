@@ -32,17 +32,23 @@
       \hspace{0.01cm}
       \begin{prooftree}
         \AxiomC{$A \land C \vdash A \land C$}
-        \UnaryInfC{$A \land C \vdash A \land C \lor B \land C$}
-        \UnaryInfC{$A \land C \vdash (A \lor B) \land C$}
+        \UnaryInfC{$A \land C \vdash A$}
+        \UnaryInfC{$A \land C \vdash A \lor B$}
+        \AxiomC{$A \land C \vdash A \land C$}
+        \UnaryInfC{$A \land C \vdash C$}
+        \BinaryInfC{$A \land C \vdash (A \lor B) \land C$}
         \AxiomC{$B \land C \vdash B \land C$}
-        \UnaryInfC{$B \land C \vdash A \land C \lor B \land C$}
-        \UnaryInfC{$B \land C \vdash (A \lor B) \land C$}
+        \UnaryInfC{$B \land C \vdash B$}
+        \UnaryInfC{$B \land C \vdash A \lor B$}
+        \AxiomC{$B \land C \vdash B \land C$}
+        \UnaryInfC{$B \land C \vdash C$}
+        \BinaryInfC{$B \land C \vdash (A \lor B) \land C$}
         \BinaryInfC{$A \land C \lor B \land C \vdash (A \lor B) \land C$}
         \UnaryInfC{$\vdash A \land C \lor B \land C \rightarrow (A \lor B) \land C$}
       \end{prooftree}
       Терм, соответствующий данному выводу:
       \begin{equation}
-        \lambda x. \text{case } x \text{ of } \{\text{inl } x \rightarrow \text{pair (fst x) (snd x)}; \text{inr } x \rightarrow \text{pair (fst x) (snd x)}\}
+        \lambda x. \text{case } x \text{ of } \{\text{inl } (x_1, x_2) \rightarrow (\text{inl } x_1, x_2); \text{inr } (x_1, x_2) \rightarrow (\text{inr } x_1, x_2)\}
       \end{equation}
     \end{solution}
     \item[(c)] (1 балл) $(A \lor C) \land (B \lor C) \rightarrow A \land B \lor C$
