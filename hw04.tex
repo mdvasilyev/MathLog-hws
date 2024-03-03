@@ -107,7 +107,30 @@
       Итоговые правила формируются как обычно: хотим все то, что сверху и получаем все, что снизу.
     \end{solution}
     \item[(b)] (1 балл) $A \downarrow B$ (стрелка Пирса) 
-    \item[(c)] (1 балл) $A \oplus B$ (исключающее ИЛИ) 
+    \begin{solution}
+      \hspace{0.01cm}
+      Сукцедент:
+      \begin{prooftree}
+        \AxiomC{$B \vdash$}
+        \AxiomC{$A \vdash$}
+        \RightLabel{$(\lor\vdash)$}
+        \BinaryInfC{$A \lor B \vdash$}
+        \RightLabel{$(\vdash\neg)$}
+        \UnaryInfC{$\vdash \overline{A \lor B}$}
+        \UnaryInfC{$\vdash A \downarrow B$}
+      \end{prooftree}
+      Антецедент:
+      \begin{prooftree}
+        \AxiomC{$\vdash A, B$}
+        \RightLabel{$(\vdash\lor)$}
+        \UnaryInfC{$\vdash A \lor B$}
+        \RightLabel{$(\neg\vdash)$}
+        \UnaryInfC{$\overline{A \lor B} \vdash$}
+        \UnaryInfC{$A \downarrow B \vdash$}
+      \end{prooftree}
+      Итоговые правила формируются как обычно: хотим все то, что сверху и получаем все, что снизу.
+    \end{solution}
+    \item[(c)] (1 балл) $A \oplus B$ (исключающее ИЛИ)
   \end{itemize}
 \end{enumerate}
 \clearpage
