@@ -131,6 +131,52 @@
       Итоговые правила формируются как обычно: хотим все то, что сверху и получаем все, что снизу.
     \end{solution}
     \item[(c)] (1 балл) $A \oplus B$ (исключающее ИЛИ)
+    \begin{solution}
+      \hspace{0.01cm}
+      Сукцедент:
+      \begin{prooftree}
+        \AxiomC{$\vdash A, B$}
+        \RightLabel{$(\vdash\lor)$}
+        \UnaryInfC{$\vdash A \lor B$}
+        \AxiomC{$A, B \vdash $}
+        \RightLabel{$(\land\vdash)$}
+        \UnaryInfC{$A \land B \vdash $}
+        \RightLabel{$(\vdash\neg)$}
+        \UnaryInfC{$\vdash \overline{A \land B}$}
+        \RightLabel{$(\vdash\land)$}
+        \BinaryInfC{$\vdash (A \lor B) \land \overline{A \land B}$}
+        \UnaryInfC{$\vdash A \oplus B$}
+      \end{prooftree}
+      Антецедент:
+      \begin{prooftree}
+        \AxiomC{$A \vdash A$}
+        \AxiomC{$A \vdash B$}
+        \RightLabel{$(\vdash\land)$}
+        \BinaryInfC{$A \vdash A \land B$}
+        \AxiomC{$B \vdash A$}
+        \AxiomC{$B \vdash B$}
+        \RightLabel{$(\vdash\land)$}
+        \BinaryInfC{$B \vdash A \land B$}
+        \RightLabel{$(\lor\vdash)$}
+        \BinaryInfC{$A \lor B \vdash A \land B$}
+        \RightLabel{$(\neg\vdash)$}
+        \UnaryInfC{$A \lor B, \overline{A \land B} \vdash$}
+        \RightLabel{$(\land\vdash)$}
+        \UnaryInfC{$(A \lor B) \land \overline{A \land B} \vdash$}
+        \UnaryInfC{$A \oplus B \vdash$}
+      \end{prooftree}
+      Итоговые правила:
+      \begin{prooftree}
+        \AxiomC{$A, B \vdash B$}
+        \AxiomC{$\vdash A, B$}
+        \BinaryInfC{$\vdash A \oplus B$}
+      \end{prooftree}
+      \begin{prooftree}
+        \AxiomC{$A \vdash B$}
+        \AxiomC{$B \vdash A$}
+        \BinaryInfC{$A \oplus B \vdash$}
+      \end{prooftree}
+    \end{solution}
   \end{itemize}
 \end{enumerate}
 \clearpage
