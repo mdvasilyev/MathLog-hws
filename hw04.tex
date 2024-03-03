@@ -37,6 +37,47 @@
       Контрпример: $q$ истинно, $p$ ложно, $r$ ложно.
     \end{solution}
     \item[(c)] (1 балл) $p \leftrightarrow q \vdash (p \lor r) \leftrightarrow q \lor r$
+    \begin{solution}
+      \hspace{0.01cm}
+      \begin{prooftree}
+        \AxiomC{Ниже}
+        \UnaryInfC{$p, q \vdash (p \lor r) \leftrightarrow q \lor r$}
+        \AxiomC{$p \vdash p, q, q, r$}
+        \AxiomC{$r \vdash p, q, q, r$}
+        \RightLabel{$(\lor\vdash)$}
+        \BinaryInfC{$p \lor r \vdash p, q, q, r$}
+        \RightLabel{$(\vdash\lor)$}
+        \UnaryInfC{$p \lor r \vdash p, q, q \lor r$}
+        \AxiomC{$q \vdash p, q, p, r$}
+        \AxiomC{$r \vdash p, q, p, r$}
+        \RightLabel{$(\lor\vdash)$}
+        \BinaryInfC{$q \lor r \vdash p, q, p, r$}
+        \RightLabel{$(\vdash\lor)$}
+        \UnaryInfC{$q \lor r \vdash p, q, p \lor r$}
+        \RightLabel{$(\vdash\leftrightarrow)$}
+        \BinaryInfC{$\vdash p, q, (p \lor r) \leftrightarrow q \lor r$}
+        \RightLabel{$(\leftrightarrow\vdash)$}
+        \BinaryInfC{$p \leftrightarrow q \vdash (p \lor r) \leftrightarrow q \lor r$}
+      \end{prooftree}
+      sdf
+      \begin{prooftree}
+        \AxiomC{$p, p, q \vdash q, r$}
+        \AxiomC{$r, p, q \vdash q, r$}
+        \RightLabel{$(\lor\vdash)$}
+        \BinaryInfC{$p \lor r, p, q \vdash q, r$}
+        \RightLabel{$(\vdash\lor)$}
+        \UnaryInfC{$p \lor r, p, q \vdash q \lor r$}
+        \AxiomC{$q, p, q \vdash p, r$}
+        \AxiomC{$r, p, q \vdash p, r$}
+        \RightLabel{$(\lor\vdash)$}
+        \BinaryInfC{$q \lor r, p, q \vdash p, r$}
+        \RightLabel{$(\vdash\lor)$}
+        \UnaryInfC{$q \lor r, p, q \vdash p \lor r$}
+        \RightLabel{$(\vdash\leftrightarrow)$}
+        \BinaryInfC{$p, q \vdash (p \lor r) \leftrightarrow q \lor r$}
+      \end{prooftree}
+      Во всех ветках уперлись в противоречия.
+    \end{solution}
   \end{itemize}
   \item Определите правила введения в антецедент и сукцедент следующих связок и покажите,
   что они действительно выражаются через существующие правила:
