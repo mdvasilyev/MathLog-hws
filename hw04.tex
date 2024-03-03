@@ -6,6 +6,18 @@
   вы имеете ввиду):
   \begin{itemize}
     \item[(a)] (1 балл) $\vdash (((p \rightarrow q) \rightarrow q) \rightarrow q) \rightarrow p$
+    \begin{solution}
+      \hspace{0.01cm}
+      \begin{prooftree}
+        \AxiomC{$\vdash (p \rightarrow q) \rightarrow q, p$}
+        \AxiomC{$q \vdash p$}
+        \RightLabel{$(\rightarrow\vdash)$}
+        \BinaryInfC{$((p \rightarrow q) \rightarrow q) \rightarrow q \vdash p$}
+        \RightLabel{$(\vdash\rightarrow)$}
+        \UnaryInfC{$\vdash (((p \rightarrow q) \rightarrow q) \rightarrow q) \rightarrow p$}
+      \end{prooftree}
+      Контрпример: $q$ истинно, $p$ ложно.
+    \end{solution}
     \item[(b)] (1 балл) $p \rightarrow q \vdash (p \rightarrow r) \rightarrow q \rightarrow r$
     \item[(c)] (1 балл) $p \leftrightarrow q \vdash (p \lor r) \leftrightarrow q \lor r$
   \end{itemize}
