@@ -19,6 +19,23 @@
       Контрпример: $q$ истинно, $p$ ложно.
     \end{solution}
     \item[(b)] (1 балл) $p \rightarrow q \vdash (p \rightarrow r) \rightarrow q \rightarrow r$
+    \begin{solution}
+      \hspace{0.01cm}
+      \begin{prooftree}
+        \AxiomC{$q \vdash p, p, r$}
+        \AxiomC{$r, q \vdash p, r$}
+        \RightLabel{$(\rightarrow\vdash)$}
+        \BinaryInfC{$p \rightarrow r, q \vdash p, r$}
+        \AxiomC{$q, p \rightarrow r, q \vdash r$}
+        \RightLabel{$(\rightarrow\vdash)$}
+        \BinaryInfC{$p \rightarrow q, p \rightarrow r, q \vdash r$}
+        \RightLabel{$(\vdash\rightarrow)$}
+        \UnaryInfC{$p \rightarrow q, p \rightarrow r \vdash q \rightarrow r$}
+        \RightLabel{$(\vdash\rightarrow)$}
+        \UnaryInfC{$p \rightarrow q \vdash (p \rightarrow r) \rightarrow q \rightarrow r$}
+      \end{prooftree}
+      Контрпример: $q$ истинно, $p$ ложно, $r$ ложно.
+    \end{solution}
     \item[(c)] (1 балл) $p \leftrightarrow q \vdash (p \lor r) \leftrightarrow q \lor r$
   \end{itemize}
   \item Определите правила введения в антецедент и сукцедент следующих связок и покажите,
