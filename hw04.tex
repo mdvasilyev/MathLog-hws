@@ -59,7 +59,7 @@
         \RightLabel{$(\leftrightarrow\vdash)$}
         \BinaryInfC{$p \leftrightarrow q \vdash (p \lor r) \leftrightarrow q \lor r$}
       \end{prooftree}
-      sdf
+      Продолжение
       \begin{prooftree}
         \AxiomC{$p, p, q \vdash q, r$}
         \AxiomC{$r, p, q \vdash q, r$}
@@ -83,6 +83,29 @@
   что они действительно выражаются через существующие правила:
   \begin{itemize}
     \item[(a)] (1 балл) $A \uparrow B$ (Штрих Шеффера)
+    \begin{solution}
+      \hspace{0.01cm}
+      Сукцедент:
+      \begin{prooftree}
+        \AxiomC{$A, B \vdash$}
+        \RightLabel{$(\land\vdash)$}
+        \UnaryInfC{$A \land B \vdash$}
+        \RightLabel{$(\vdash\neg)$}
+        \UnaryInfC{$\vdash \overline{A \land B}$}
+        \UnaryInfC{$\vdash A \uparrow B$}
+      \end{prooftree}
+      Антецедент:
+      \begin{prooftree}
+        \AxiomC{$\vdash A$}
+        \AxiomC{$\vdash B$}
+        \RightLabel{$(\vdash\land)$}
+        \BinaryInfC{$\vdash A \land B$}
+        \RightLabel{$(\neg\vdash)$}
+        \UnaryInfC{$\overline{A \land B} \vdash$}
+        \UnaryInfC{$A \uparrow B \vdash$}
+      \end{prooftree}
+      Итоговые правила формируются как обычно: хотим все то, что сверху и получаем все, что снизу.
+    \end{solution}
     \item[(b)] (1 балл) $A \downarrow B$ (стрелка Пирса) 
     \item[(c)] (1 балл) $A \oplus B$ (исключающее ИЛИ) 
   \end{itemize}
