@@ -5,6 +5,23 @@
     \begin{center}
         \includegraphics[width=0.15\textwidth]{hw05_1.png}
     \end{center}
+    \begin{solution}
+        Пусть в $w_2$ выводимо $p, q$, в $w_3$ выводимо $p, r$, тогда в $w_2$ и $w_2$ еще выводимо:
+        \begin{equation}
+            q \lor r
+        \end{equation}
+        В $w_1$ выводимо:
+        \begin{equation}
+            p \rightarrow q \lor r
+        \end{equation}
+        Но в $w_1$ не выводится
+        \begin{align*}
+            &p \rightarrow q \\
+            &p \rightarrow r \\
+            &(p \rightarrow q) \lor (p \rightarrow r)
+        \end{align*}
+        Поэтому опровержима формула $(p \rightarrow q \lor r) \rightarrow (p \rightarrow q) \lor (p \rightarrow r)$.
+    \end{solution}
     \item (1 балл) Допишите указание истинности переменных в следующей шкале Крипке так,
     чтобы она опровергала формулу $(\overline{p} \rightarrow q \lor r) \rightarrow (\overline{p} \rightarrow q) \lor (\overline{p} \rightarrow r)$:
     \begin{center}
