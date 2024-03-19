@@ -45,6 +45,16 @@
     \item В стандартной интерпретации языка элементарной арифметики выразите следующие свойства:
     \begin{itemize}
         \item[(a)] (1б.) $q$ есть частное от деления $a$ на $b$;
+        \begin{solution}
+            Здесь и далее пользуюсь тем, что наша модель это $(\mathbb{R}, =, +, \cdot, 0, 1)$. Также удобно ввести порядок:
+            \begin{equation}
+                a \leq b \leftrightarrow \exists x. b = a + x \cdot x
+            \end{equation}
+            Дальше не очень понятно, что именно имеется в виду. Если имеется в виду $a/b = q$, то подойдет предикат $P(a,b,q)$
+            \begin{equation}
+                \exists q. \overline{(b=0)} \land q \cdot b = a
+            \end{equation}
+        \end{solution}
         \item[(b)] (1б.) $r$ есть остаток от деления $a$ на $b$;
         \item[(c)] (1б.) $s$ есть НОД $a$ и $b$;
         \item[(d)] (1б.) $t$ есть НОК $a$ и $b$;
