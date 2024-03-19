@@ -28,6 +28,12 @@
             \end{equation}
         \end{solution}
         \item[(c)] (1б.) ”Существует по крайней мере один, но не более двух элементов, удовлетворяющих $P(x)$”
+        \begin{solution}
+            По сути это означает, что существует либо ровно 1, либо ровно 2 (пункт а), поэтому
+            \begin{equation}
+                \exists a(P(a) \land \forall b. P(b) \rightarrow (b = a)) \lor \exists x. \exists y. P(x) \land P(y) \land \overline{(x=y)} \land \forall z. P(z) \rightarrow (z = x \lor z = y)
+            \end{equation}
+        \end{solution}
         \item[(d)] (1б.) ”Существует не более одного элемента, удовлетворяющего $P(x)$”
     \end{itemize}
     \item В стандартной интерпретации языка элементарной арифметики выразите следующие свойства:
