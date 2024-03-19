@@ -1,6 +1,16 @@
 \section{Алгебраические теории и логика первого порядка}
 \begin{enumerate}
     \item (1б.) Опишите двухсортную сигнатуру и теорию коммутативных колец с единицей и модулей над ними.
+    \begin{solution}
+        $M$ -- модуль, $A$ -- коммутативное кольцо.
+        \begin{eqnarray}
+            &\Sigma = \langle\{A, M\}, \{*:A \times A \rightarrow A, +:A \times A \rightarrow A, e: A\}\rangle \\
+            &(a*b)*m = a*(b*m), \quad \forall a, b \in A, m \in M \\
+            &e*m = m, \quad m \in M \\
+            &(a+b)*m = a*m+b*m, \quad \forall a, b \in A, m \in M \\
+            &a*(m+n) = a*m+a*n, \quad \forall a \in A, m, n \in M
+        \end{eqnarray}
+    \end{solution}
     \item Выразите следующие свойства в логике первого порядка (запишите их в виде формул):
     \begin{itemize}
         \item[(a)] (1б.) ”Существует ровно два элемента, удовлетворяющих $P(x)$”
