@@ -52,10 +52,17 @@
             \end{equation}
             Дальше не очень понятно, что именно имеется в виду. Если имеется в виду $a/b = q$, то подойдет предикат $Q(a,b,q)$
             \begin{equation}
-                \exists q. \overline{(b=0)} \land q \cdot b = a
+                Q(a,b,q) \rightleftharpoons \overline{(b=0)} \land q \cdot b = a
             \end{equation}
         \end{solution}
         \item[(b)] (1б.) $r$ есть остаток от деления $a$ на $b$;
+        \begin{solution}
+            Воспользуемся предикатом из предыдущего пункта $Q(a,b,q)$, тогда можно ввести такой предикат $R(a,b,q,r)$
+            \begin{equation}
+                R(a,b,q,r) \rightleftharpoons Q(a - r,b,q)
+            \end{equation}
+            Понятно, что разность в нашей системе несложно выражается, поэтому можно вычесть остаток и проверить предикат из предыдущего пункта на результате разности.
+        \end{solution}
         \item[(c)] (1б.) $s$ есть НОД $a$ и $b$;
         \item[(d)] (1б.) $t$ есть НОК $a$ и $b$;
         \item[(e)] (1б.) $a$ и $b$ взаимно просты;
