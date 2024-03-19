@@ -65,9 +65,9 @@
         \end{solution}
         \item[(c)] (1б.) $s$ есть НОД $a$ и $b$;
         \begin{solution}
-            Воспользуемся предикатом из предыдущего пункта
+            Воспользуемся предикатом из предыдущего пункта и заведем новый предикат $D(a,b,s)$
             \begin{equation}
-                R(a,s,p,0) \land R(b,s,q,0) \land \overline{\exists} s'. s \leq s' \land R(a,s',p',0) \land R(b,s',q',0)
+                D(a,b,s) \rightleftharpoons R(a,s,p,0) \land R(b,s,q,0) \land \overline{\exists} s'. s \leq s' \land R(a,s',p',0) \land R(b,s',q',0)
             \end{equation}
         \end{solution}
         \item[(d)] (1б.) $t$ есть НОК $a$ и $b$;
