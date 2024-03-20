@@ -14,6 +14,16 @@
     \item Постройте ПНФ формул и сколемизируйте результат до $\Pi_1$:
     \begin{itemize}
         \item[(a)] (1 балл) $\exists x\forall y P(x, y) \lor \exists x\forall y Q(x, y)$
+        \begin{solution}
+            \begin{align*}
+                &\exists x\forall y P(x, y) \lor \exists x\forall y Q(x, y) \\
+                &\exists x . \forall y P(x, y) \lor \forall y Q(x, y) \\
+                &\exists x . \forall y P(x, y) \lor \forall z Q(x, z) \\
+                &\exists x . \forall y. P(x, y) \lor \forall z Q(x, z) \\
+                &\exists x . \forall y. \forall z . P(x, y) \lor Q(x, z) \\
+                &\forall y. \forall z . P(x, y) \lor Q(x, z)
+            \end{align*}
+        \end{solution}
         \item[(b)] (1 балл) $\exists x\forall y P(x, y) \rightarrow \exists x\forall y Q(x, y)$
         \item[(c)] (2 балла) $\exists x. \forall y P(y) \rightarrow \overline{\exists z S(z)} \land \exists y Q(x, y)$
     \end{itemize}
