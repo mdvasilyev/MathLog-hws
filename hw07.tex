@@ -2,6 +2,19 @@
 \begin{enumerate}
     \item (1 балл) Покажите, что формула из лекции является общезначимой:
     $$(\exists x\varphi(x) \rightarrow \forall x\psi(x)) \rightarrow \forall x. \varphi(x) \rightarrow \psi(x)$$
+    \begin{solution}
+        \begin{align*}
+            &(\exists x\varphi(x) \rightarrow \forall x\psi(x)) \rightarrow \forall x. \varphi(x) \rightarrow \psi(x) \\
+            &(\exists x\varphi(x) \rightarrow \forall x\psi(x)) \rightarrow (\forall x. \varphi(x) \rightarrow \psi(x)) \\
+            &\sphericalangle\quad \exists x\varphi(x) \rightarrow \forall x\psi(x) = T \\
+            &1.\quad \exists x\varphi(x) = T, \quad \forall x\psi(x) = T \Rightarrow  \forall x. \varphi(x) \rightarrow \psi(x) = T \\
+            &\text{потому что } \psi(x) \text{ всегда истинно} \\
+            &2.\quad \exists x\varphi(x) = F, \quad \forall x\psi(x) = T \Rightarrow  \forall x. \varphi(x) \rightarrow \psi(x) = T \\
+            &\text{потому что } \psi(x) \text{ всегда истинно} \\
+            &3.\quad \exists x\varphi(x) = F, \quad \forall x\psi(x) = F \Rightarrow  \forall x. \varphi(x) \rightarrow \psi(x) \leftrightarrow \exists x \varphi(x) \rightarrow \psi = F \rightarrow F = T
+        \end{align*}
+        Таким образом, мы рассмотрели все возможные случаи, когда посылка истинна и показали, что во всех случаях заключение тоже истинно, поэтому данная формула общезначимая.
+    \end{solution}
     \item Покажите, что следующие формулы не являются общезначимыми (приведите контрпример — интерпретацию и значения переменных, как на лекции):
     \begin{itemize}
         \item[(a)] (0,5 балла) $\forall x\varphi \lor \psi \leftrightarrow \forall x. \varphi \lor \psi$
