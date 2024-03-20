@@ -25,6 +25,17 @@
             \end{align*}
         \end{solution}
         \item[(b)] (1 балл) $\exists x\forall y P(x, y) \rightarrow \exists x\forall y Q(x, y)$
+        \begin{solution}
+            \begin{align*}
+                &\exists x\forall y P(x, y) \rightarrow \exists x\forall y Q(x, y) \\
+                &\exists x\forall y P(x, y) \rightarrow \exists z\forall u Q(z, u) \\
+                &\forall x . \forall y P(x, y) \rightarrow \exists z\forall u Q(z, u) \\
+                &\forall x . \exists y . P(x, y) \rightarrow \exists z\forall u Q(z, u) \\
+                &\forall x . \exists y . \exists z . P(x, y) \rightarrow \forall u Q(z, u) \\
+                &\forall x . \exists y . \exists z . \forall u . P(x, y) \rightarrow Q(z, u) \\
+                &\forall x . \forall u . P(x, y) \rightarrow Q(z, u)
+            \end{align*}
+        \end{solution}
         \item[(c)] (2 балла) $\exists x. \forall y P(y) \rightarrow \overline{\exists z S(z)} \land \exists y Q(x, y)$
     \end{itemize}
 \end{enumerate}
