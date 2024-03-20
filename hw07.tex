@@ -37,6 +37,19 @@
             \end{align*}
         \end{solution}
         \item[(c)] (2 балла) $\exists x. \forall y P(y) \rightarrow \overline{\exists z S(z)} \land \exists y Q(x, y)$
+        \begin{solution}
+            \begin{align*}
+                &\exists x. \forall y P(y) \rightarrow \overline{\exists z S(z)} \land \exists y Q(x, y) \\
+                &\exists x. \forall y P(y) \rightarrow \forall z \overline{S(z)} \land \exists y Q(x, y) \\
+                &\exists x. \forall y P(y) \rightarrow \forall z \overline{S(z)} \land \exists u Q(x, u) \\
+                &\exists x. \exists y . P(y) \rightarrow \forall z \overline{S(z)} \land \exists u Q(x, u) \\
+                &\exists x. \exists y . P(y) \rightarrow \exists u . \forall z \overline{S(z)} \land  Q(x, u) \\
+                &\exists x. \exists y . \exists u . P(y) \rightarrow \forall z \overline{S(z)} \land  Q(x, u) \\
+                &\exists x. \exists y . \exists u . P(y) \rightarrow \forall z . \overline{S(z)} \land  Q(x, u) \\
+                &\exists x. \exists y . \exists u . \forall z . P(y) \rightarrow \overline{S(z)} \land  Q(x, u) \\
+                &\forall z . P(y) \rightarrow \overline{S(z)} \land  Q(x, u)
+            \end{align*}
+        \end{solution}
     \end{itemize}
 \end{enumerate}
 \clearpage
