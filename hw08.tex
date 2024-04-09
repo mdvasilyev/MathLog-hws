@@ -2,7 +2,20 @@
 \begin{enumerate}
   \item Выведите следующие формулы (постройте дерево вывода):
   \begin{itemize}
-    \item[(a)] (1 балл) $(\exists x\varphi (x) \rightarrow  \forall y\psi (y)) \rightarrow  \forall x. \varphi (x) \rightarrow  \psi (x)$
+    \item[(a)] (1 балл) $(\exists x\varphi (x) \rightarrow  \forall y\psi (y)) \rightarrow  \forall x. \varphi (x) \rightarrow  \psi (x)$    
+    \begin{solution}
+        \hspace{0.01cm}
+        \begin{prooftree}
+          \AxiomC{$\exists x\varphi (x) \rightarrow  \forall y\psi (y), \varphi (x) \vdash \varphi (x)$}
+          \UnaryInfC{$\exists x\varphi (x) \rightarrow  \forall y\psi (y), \varphi (x) \vdash \exists x \varphi (x)$}
+          \AxiomC{$\exists x\varphi (x) \rightarrow  \forall y\psi (y), \varphi (x) \vdash \exists x \varphi (x) \rightarrow \forall x \psi (x)$}
+          \BinaryInfC{$\exists x\varphi (x) \rightarrow  \forall y\psi (y), \varphi (x) \vdash \forall x \psi (x)$}
+          \UnaryInfC{$\exists x\varphi (x) \rightarrow  \forall y\psi (y), \varphi (x) \vdash \psi (x)$}
+          \UnaryInfC{$\exists x\varphi (x) \rightarrow  \forall y\psi (y) \vdash \varphi (x) \rightarrow  \psi (x)$}
+          \UnaryInfC{$\vdash (\exists x\varphi (x) \rightarrow  \forall y\psi (y)) \rightarrow \varphi (x) \rightarrow  \psi (x)$}
+          \UnaryInfC{$\vdash (\exists x\varphi (x) \rightarrow  \forall y\psi (y)) \rightarrow  \forall x. \varphi (x) \rightarrow  \psi (x)$}
+        \end{prooftree}
+      \end{solution}
     \item[(b)] (1 балл) $(\exists x. \varphi (x) \rightarrow  \psi (x)) \rightarrow  \forall x\varphi (x) \rightarrow  \exists x\psi (x)$
     \item[(a)] (1 балл) $(\exists x. \varphi (x) \lor  \psi (x)) \rightarrow  \exists x\varphi (x) \lor  \exists x\psi (x)$
   \end{itemize}
