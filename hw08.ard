@@ -1,0 +1,19 @@
+\import Logic
+\import Logic.Meta
+
+
+--(a) (1 балл) (∃xφ(x) → ∀yψ(y)) → ∀x. φ(x) → ψ(x)
+\func task01
+  {A : \Set} {phi psi : A -> \Prop}
+  (f : ∃ (x : A) (phi x) -> \Pi (y : A) -> psi y) (x : A) (p : phi x)
+  : psi x => f (inP (x, p)) x
+
+
+--(b) (1 балл) (∃x. φ(x) → ψ(x)) → ∀xφ(x) → ∃xψ(x)
+\func task02
+  {A : \Set} {phi psi : A -> \Prop}
+  (f : ∃ (x : A) (phi x -> psi x))
+  : (\Pi (x : A) -> phi x) -> ∃ (x : A) (psi x)  => \lam p =>
+    \case f \with {
+      inP (x, h) => inP (x, h (p x))
+    }
